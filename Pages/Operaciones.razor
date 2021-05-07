@@ -1,0 +1,51 @@
+﻿<h3>Operaciones</h3>
+@page "/Operaciones aritmeticas"
+
+<h3>Suma, Resta y Multiplicación.</h3>
+<p>Ingrese los números a calcular.</p>
+
+<div>
+    <div>
+        <label>Primer Numero</label>
+        <input @bind="PrimerNumero" />
+    </div>
+
+    <div>
+        <label>Segundo Numero</label>
+        <input @bind="SegundoNumero" />
+    </div>
+
+    <div>
+        <button class="btn btn-primary" @onclick="Operacion">Calcular</button>
+    </div>
+
+    <div>
+        <p>
+
+        </p>
+    </div>
+
+    <div>
+        <p>El resultadode la  Suma es: @Suma</p>
+        <p>El resultado de la Resta es: @Resta</p>
+        <p>El resultado de la Multiplicacion es: @Multiplicacion</p>
+    </div>
+
+</div>
+
+@code {
+
+    //[Parameter]
+    public float PrimerNumero { get; set; }
+    public float SegundoNumero { get; set; }
+    public float Suma, Resta, Multiplicacion;
+
+    private void Operacion()
+    {
+
+        Math.Round(Suma = PrimerNumero + SegundoNumero);
+        Math.Round(Resta = PrimerNumero - SegundoNumero);
+        Math.Round(Multiplicacion = PrimerNumero * SegundoNumero);
+    }
+
+}
